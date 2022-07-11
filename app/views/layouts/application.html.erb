@@ -7,17 +7,25 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
 </head>
 
 <body>
-  <main class="container mx-auto mt-28 px-5 flex">
+  <main class="container bg-black">
+    <div>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <%= render 'home/navbar'  %>
+    </div>
+    <div class="flex mx-auto max-w-screen-sm mt-28 px-5">
+
+
+      <%= yield %>
+      <p class="notice text-white"><%= notice %></p>
+      <p class="alert text-white"><%= alert %></p>
+    </div>
   </main>
 </body>
 
